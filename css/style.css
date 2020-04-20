@@ -9,8 +9,6 @@ html {
     scroll-behavior: smooth;
 }
 
-#go-top {}
-
 
 /*  General Styling
 /*-----------------------------------------------------------------------------------*/
@@ -20,6 +18,8 @@ body {
     /*--color-bg: rgba(247,247,247,1);*/
     --color-link: #ff4828;
     --color-bg: #333333;
+    --color-texthover: #7ba5d0;
+    --color-texthover2: #b8a07e;
     background: var(--color-bg);
     color: #666;
     font-family: "Roboto Mono", monospace;
@@ -78,8 +78,16 @@ a:hover {
 
 a:hover,
 a:focus {
-    color: #b8a07e;
+    color: var(--color-texthover2);
     text-decoration: underline;
+}
+
+.filter a:hover {
+    color: var(--color-texthover);
+}
+
+.filter a:focus {
+    color: var(--color-texthover);
 }
 
 
@@ -110,12 +118,12 @@ p {
 }
 
 ::-moz-selection {
-    background: #b8a07e;
+    background: var(--color-text);
     color: #fff;
 }
 
 ::selection {
-    background: #b8a07e;
+    background: var(--color-text);
     color: #fff;
 }
 
@@ -191,7 +199,7 @@ p {
 }
 
 .hvr-shutter-in-horizontal:hover {
-    background: #b8a07e;
+    background: var(--color-text);
 }
 
 .mb-30 {
@@ -332,7 +340,7 @@ p {
 .services-block span {
     margin: 20px 0;
     position: relative;
-    font-size: 13px;
+    font-size: 12px;
     color: black;
     letter-spacing: 0.1em;
     font-weight: 500;
@@ -345,11 +353,24 @@ p {
     color: #5f5f5f;
 }
 
+.mano-aguste {
+    top: 18px;
+}
+
 .services-block .separator {
     margin: 0;
-    font-size: 13px;
+    font-size: 12px;
     line-height: 22px;
     color: #694b95;
+    font-family: "Quicksand", sans-serif;
+}
+
+.separator div {
+    margin: 0;
+    font-size: 12px;
+    line-height: 22px;
+    color: #694b95;
+    font-family: "Quicksand", sans-serif;
 }
 
 .services-block ion-icon {
@@ -424,8 +445,8 @@ p {
 #portfolio {
     position: relative;
     padding-bottom: 50px;
-    background: rgb(247, 247, 247);
-    background: linear-gradient(175deg, rgba(247, 247, 247, 1) 0%, rgba(255, 255, 255, 1) 19%, rgba(255, 255, 255, 1) 63%, rgba(247, 247, 247, 1) 100%);
+    background: #f7f7f7;
+    /*background: linear-gradient(175deg, rgba(247, 247, 247, 1) 0%, rgba(255, 255, 255, 1) 19%, rgba(255, 255, 255, 1) 63%, rgba(247, 247, 247, 1) 100%);*/
 }
 
 #portfolio .portfolio-list {
@@ -457,7 +478,7 @@ p {
 
 #portfolio .portfolio-list .nav li:hover,
 #portfolio .portfolio-list .nav li.filter-active {
-    color: #b8a07e;
+    color: var(--color-text);
     -moz-transition: all 0.5s ease-in-out 0s;
     -ms-transition: all 0.5s ease-in-out 0s;
     -o-transition: all 0.5s ease-in-out 0s;
@@ -516,7 +537,7 @@ p {
 
 #portfolio2 .portfolio-list .nav li:hover,
 #portfolio2 .portfolio-list .nav li.filter-active {
-    color: #b8a07e;
+    color: var(--color-text);
     -moz-transition: all 0.5s ease-in-out 0s;
     -ms-transition: all 0.5s ease-in-out 0s;
     -o-transition: all 0.5s ease-in-out 0s;
@@ -595,7 +616,7 @@ p {
 }
 
 .journal-block .journal-info .journal-txt h4 a:hover {
-    color: #b8a07e;
+    color: var(--color-texthover2);
     -moz-transition: all 0.5s ease-in-out 0s;
     -ms-transition: all 0.5s ease-in-out 0s;
     -o-transition: all 0.5s ease-in-out 0s;
@@ -729,7 +750,7 @@ p.separator {
 }
 
 #footer .socials-media ul li a:hover {
-    color: #b8a07e;
+    color: var(--color-texthover2);
     -moz-transition: all 0.5s ease-in-out 0s;
     -ms-transition: all 0.5s ease-in-out 0s;
     -o-transition: all 0.5s ease-in-out 0s;

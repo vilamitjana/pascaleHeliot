@@ -1,4 +1,3 @@
-
 // set the starting position of the cursor outside of the screen
 let clientX = -100;
 let clientY = -100;
@@ -44,7 +43,7 @@ const initCanvas = () => {
         height: 75
     };
     paper.setup(canvas);
-    const strokeColor = "rgba(255, 0, 0, 0.5)";
+    const strokeColor = "rgba(255, 72, 40, 1)";
     const strokeWidth = 1;
     const segments = 8;
     const radius = 15;
@@ -55,11 +54,11 @@ const initCanvas = () => {
     let isNoisy = false; // state
 
     // the base shape for the noisy circle
- /*   const polygon = new paper.Path.RegularPolygon(
-        new paper.Point(0, 0),
-        segments,
-        radius
-    );*/
+    /*   const polygon = new paper.Path.RegularPolygon(
+           new paper.Point(0, 0),
+           segments,
+           radius
+       );*/
 
 
 
@@ -73,7 +72,7 @@ const initCanvas = () => {
 
     //  Test circule
     let myCircle = new paper.Path.Circle(new paper.Point(0, 0), radius);
-    myCircle.fillColor = "rgba(255, 72, 40, 0.75)";
+    myCircle.fillColor = "rgba(255, 72, 40, 1)";
     myCircle.strokeColor = "rgba(255, 72, 40, 1)";
     myCircle.strokeWidth = 0;
     myCircle.smooth();
@@ -158,7 +157,7 @@ const initCanvas = () => {
 
 
 
-      //  group.position = new paper.Point(lastX, lastY);
+        //  group.position = new paper.Point(lastX, lastY);
         groupCirclie.position = new paper.Point(lastX, lastY);
     }
 }
