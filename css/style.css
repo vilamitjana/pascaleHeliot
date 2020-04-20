@@ -176,6 +176,11 @@ p {
     padding-bottom: 90px;
 }
 
+.paddcontact {
+    padding-top: 90px;
+    padding-bottom: 0px;
+}
+
 .paddsections {
     padding-top: 90px;
     padding-bottom: 90px !important;
@@ -805,7 +810,7 @@ ion-icon {
 
 .language-bar {
     font-family: "Quicksand", sans-serif;
-    position: fixed;
+    position: absolute;
     list-style-type: none;
     top: 80%;
     font-size: 12px;
