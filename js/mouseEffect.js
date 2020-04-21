@@ -72,9 +72,9 @@ const initCanvas = () => {
 
     //  Test circule
     let myCircle = new paper.Path.Circle(new paper.Point(0, 0), radius);
-    myCircle.fillColor = "rgba(255, 72, 40, 1)";
+    myCircle.fillColor = "rgba(255, 72, 40, 0)";
     myCircle.strokeColor = "rgba(255, 72, 40, 1)";
-    myCircle.strokeWidth = 0;
+    myCircle.strokeWidth = 1;
     myCircle.smooth();
     groupCirclie = new paper.Group([myCircle]);
     groupCirclie.applyMatrix = false;
@@ -141,6 +141,7 @@ const initCanvas = () => {
         if (isStuck && myCircle.bounds.width < 75 && myCircle.bounds.width > 20) {
             // scale up the shape 
             myCircle.scale(0.92);
+            myCircle.fillColor = "rgba(255, 72, 40, 0.5)";
         } else if (!isStuck && myCircle.bounds.width < 30) {
             // remove noise
             if (isNoisy) {
@@ -153,6 +154,7 @@ const initCanvas = () => {
             // scale down the shape
             const scaleup = 1.08;
             myCircle.scale(scaleup);
+            myCircle.fillColor = "rgba(255, 72, 40, 0)";
         }
 
 
