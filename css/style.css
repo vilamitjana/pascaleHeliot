@@ -996,7 +996,7 @@ https://codepen.io/fancyapps/pen/rmwyXN
 }
 
 .fancybox-morphing .fancybox-bg {
-    background: #615e57;
+    background: #000;
     opacity: 1;
 }
 
@@ -1031,7 +1031,7 @@ https://codepen.io/fancyapps/pen/rmwyXN
 
 #morphing-content * {
     color: #fff;
-    font-size: 18px;
+    font-size: 14px;
     letter-spacing: 5px;
 }
 
@@ -1058,6 +1058,12 @@ https://codepen.io/fancyapps/pen/rmwyXN
 
 img {
     width: 100%;
+}
+
+.fancybox-caption__body {
+    font-family: "Quicksand", sans-serif;
+    font-size: 14px;
+    ;
 }
 
 
@@ -1116,6 +1122,7 @@ img {
 
 .fancybox-is-open .fancybox-bg {
     opacity: 1;
+    background-color: #000;
 }
 
 
