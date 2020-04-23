@@ -9,7 +9,14 @@
  *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  */
 
-@media (min-width: 992px) and (max-width: 1199px) {}
+@media (min-width: 992px) and (max-width: 1199px) {
+    .contact-block {
+        position: absolute;
+        bottom: 23%;
+        right: 59%;
+        z-index: 1001;
+    }
+}
 
 
 /** Width between 768px to 991px
@@ -60,6 +67,11 @@
         max-width: 100%;
         margin-bottom: 0;
     }
+    .about-img {
+        padding-top: 46px;
+        position: relative;
+        left: 0px;
+    }
     /* portfolio */
     #portfolio .portfolio-list .nav li {
         float: none;
@@ -79,6 +91,12 @@
     /* Contact */
     .contact-contact {
         margin-bottom: 30px;
+    }
+    .contact-block {
+        position: absolute;
+        bottom: 21%;
+        right: 49%;
+        z-index: 1001;
     }
     /* Footer */
     #footer .socials-media ul li {
@@ -163,6 +181,12 @@
     .contact-contact {
         margin-bottom: 30px;
     }
+    .contact-block {
+        position: absolute;
+        bottom: 20%;
+        right: 44%;
+        z-index: 1001;
+    }
     /* Footer */
     #footer .socials-media ul li {
         margin-right: 0;
@@ -246,6 +270,12 @@
     .contact-contact {
         margin-bottom: 30px;
     }
+    .contact-block {
+        position: absolute;
+        bottom: 16%;
+        right: 32%;
+        z-index: 1001;
+    }
     /* Footer */
     #footer .socials-media ul li {
         margin-right: 0;
@@ -310,6 +340,9 @@
         max-width: 100%;
         margin-bottom: 0;
     }
+    ul {
+        padding: 0px;
+    }
     /* portfolio */
     #portfolio .portfolio-list .nav li {
         float: none;
@@ -326,6 +359,12 @@
     /* Contact */
     .contact-contact {
         margin-bottom: 30px;
+    }
+    .contact-block {
+        position: absolute;
+        bottom: 9%;
+        right: 5%;
+        z-index: 1001;
     }
     /* Footer */
     #footer .socials-media ul li {
@@ -407,6 +446,12 @@
     /* Contact */
     .contact-contact {
         margin-bottom: 30px;
+    }
+    .contact-block {
+        position: absolute;
+        bottom: 4%;
+        right: 0%;
+        z-index: 1001;
     }
     /* Footer */
     #footer .socials-media ul li {

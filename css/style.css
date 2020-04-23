@@ -159,7 +159,8 @@ p {
 }
 
 .section-title {
-    margin-bottom: 70px;
+    margin-bottom: 50px;
+    padding-top: 30px;
 }
 
 .section-title h2 {
@@ -190,7 +191,7 @@ p {
 }
 
 .paddsection {
-    padding-top: 90px;
+    padding-top: 0px;
     padding-bottom: 90px;
 }
 
@@ -281,7 +282,7 @@ p {
 
 #navigation {
     background-color: #f2f2f2;
-    height: 100vh;
+    height: 110vh;
     width: 100%;
 }
 
@@ -302,10 +303,9 @@ p {
 /*-----------------------------------------------------------------------------------*/
 
 #about {
-    width: 100%;
+    width: 100vw;
     height: auto;
     background: #333333;
-    padding-top: 190px;
 }
 
 .about-img {
