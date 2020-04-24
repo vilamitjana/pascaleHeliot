@@ -52,6 +52,25 @@ const flechas2 = {
 
 };
 
+const fancyStyleModal = {
+    infobar: false,
+    toolbar: "auto",
+    buttons: [
+        "close"
+    ],
+    arrows: false,
+    baseTpl: '<div class="fancybox-container" role="dialog" tabindex="-1">' +
+        '<div class="fancybox-bg-modal"></div>' +
+        '<div class="fancybox-inner">' +
+        '<div class="fancybox-infobar"><span data-fancybox-index></span>&nbsp;/&nbsp;<span data-fancybox-count></span></div>' +
+        '<div class="fancybox-toolbar">{{buttons}}</div>' +
+        '<div class="fancybox-navigation">{{arrows}}</div>' +
+        '<div class="fancybox-stage"></div>' +
+        '<div class="fancybox-caption"><div class=""fancybox-caption__body"></div></div>' +
+        '</div>' +
+        '</div>',
+};
+
 const fancyStyle1 = {
     infobar: true,
     toolbar: "auto",
@@ -98,6 +117,8 @@ $('[data-fancybox="ua5"]').fancybox(fancyStyle2);
 $('[data-fancybox="ua6"]').fancybox(fancyStyle2);
 $('[data-fancybox="ua7"]').fancybox(fancyStyle2);
 $('[data-fancybox="ua8"]').fancybox(fancyStyle2);
+
+$('[data-fancybox="modal-text"]').fancybox(fancyStyleModal);
 
 
 // ========================================================================= //

@@ -12,18 +12,19 @@
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand|Roboto+Mono&display=swap" rel="stylesheet">
 
     <!-- Bootstrap CSS File -->
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Libraries CSS Files -->
-    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/magnific-popup/magnific-popup.css" rel="stylesheet">
-    <link href="lib/hover/hover.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
 
-    <!-- Blog Stylesheet File -->
-    <link href="css/blog.css" rel="stylesheet">
+    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
 
     <!-- Main Stylesheet File -->
     <link href="css/style.css" rel="stylesheet">
@@ -31,19 +32,14 @@
     <!-- Responsive css -->
     <link href="css/responsive.css" rel="stylesheet">
 
-    <!-- Favicon -->
+    <!-- menu css -->
+    <link href="css/menu.css" rel="stylesheet">
+
     <link rel="shortcut icon" href="images/favicon.png">
 
-    <!-- =======================================================
-    Theme Name: Folio
-    Theme URL: https://bootstrapmade.com/folio-bootstrap-portfolio-template/
-    Author: BootstrapMade.com
-    Author URL: https://bootstrapmade.com
-  ======================================================= -->
 </head>
 
 <body class="page">
-    <!-- The cursor elements -->
     <!-- The cursor elements -->
     <div class="preloader-wrapper">
         <div class="preloader">
@@ -56,36 +52,12 @@
 
             <!-- The cursor elements -->
             <div class="cursor cursor--small"></div>
-            <canvas class="cursor cursor--canvas" resize></canvas>
+            <canvas class="cursor cursor--canvas d-none d-sm-block" resize></canvas>
 
         </div>
     </main>
 
-    <!-- start section navbar -->
-    <nav id="main-nav">
-        <div class="row">
-            <div class="container">
 
-                <div class="logo">
-                    <a href="index.html">Pascale Héliot</a>
-                </div>
-
-                <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
-
-                <ul class="nav-menu list-unstyled">
-                    <li><a href="index.html#paintings">paintings</a></li>
-                    <li><a href="index.html#paintings">urban art</a></li>
-                    <li><a href="index.html#bio">bio</a></li>
-                    <li><a href="index.html#journal">texts</a></li>
-                    <li><a href="index.html#paintings">arrangements</a></li>
-                    <li><a href="index.html#oferta">oferta</a></li>
-                    <li><a href="index.html#kontakt">contact</a></li>
-                    <li><a href="Bio-pol.html" class="d-lg-none">pol</a> <a href="Bio-en.html" class="d-lg-none">en</a> <a href="Bio-es.html" class="d-lg-none">es</a></li>
-                </ul>
-
-            </div>
-        </div>
-    </nav>
     <!-- End section navbar -->
     <!-- start section main content -->
     <div class="main-content paddsection">
@@ -106,14 +78,14 @@
                                 <div class="block-main mb-30">
                                     <div class="content-main single-post padDiv">
                                         <a href="index.html#journal">
-                                            <ion-icon name="ellipse" size="small" class="link" style="color:#B200FF;"></ion-icon>
+                                            <ion-icon name="ellipse" size="small" class="link" style="color:#ea6227;"></ion-icon>
                                         </a>
                                     </div>
                                     <div class="content-main single-post padDiv">
                                         <div class="journal-txt">
                                             <h4 class="ml12">
                                                 <span class="text-wrapper">
-                                                    <span class="letters">Twister or implicit painting</span>
+                                                    <span class="letters">Twister or <wbr>implicit <wbr>painting</span>
                                                 </span>
                                             </h4>
 
@@ -209,10 +181,15 @@
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
 
+    <!-- MOUSEEFFECT -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.2/paper-full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.4.0/simplex-noise.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+
     <!-- Template Main Javascript File -->
     <script src="js/main.js"></script>
     <script src="js/mouseEffect.js"></script>
-    <script src="js/carousels.js"></script>
+    <script src="js/scrolling.js"></script>
     <script src="js/pages.js"></script>
 </body>
 
