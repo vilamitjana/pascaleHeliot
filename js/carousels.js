@@ -75,7 +75,8 @@ const fancyStyle1 = {
     infobar: true,
     toolbar: "auto",
     buttons: [
-        "close"
+        "close",
+        "zoom"
     ],
     animationEffect: "zoom-in-out",
     animationDuration: 1000,
