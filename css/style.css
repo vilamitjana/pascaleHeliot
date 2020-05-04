@@ -222,7 +222,7 @@ p {
     flex-wrap: wrap;
 }
 
-.row.display-flex>[class*='col-'] {
+.row.display-flex>[class*="col-"] {
     display: flex;
     flex-direction: column;
 }
@@ -318,7 +318,6 @@ p {
 
 .about-text {
     background: #4564e9;
-    padding-top: 6vh;
 }
 
 .about-bg {
@@ -334,17 +333,56 @@ p {
     /* Do not repeat the image */
     background-size: cover;
     /* Resize the background image to cover the entire container */
-    height: 75vh;
+    min-height: 85vh;
 }
 
 ul.separator.bio {
     font-size: 0.9em;
     line-height: 1.7em;
     letter-spacing: 0px;
+    width: fit-content;
+    margin: auto;
 }
 
 ul.separator.bio a {
     letter-spacing: normal;
+}
+
+.bio {
+    list-style-type: none;
+}
+
+.bio li {
+    padding-left: 64px;
+    text-indent: -45px;
+    line-height: 32px;
+    text-align: left;
+}
+
+.three {
+    padding-left: 0px!important;
+    text-indent: -13px !important;
+}
+
+.two {
+    padding-left: 0px !important;
+    text-indent: -13px !important;
+}
+
+.one {
+    padding-left: 0px!important;
+    text-indent: -13px !important;
+}
+
+.bio-date {
+    color: #d88537;
+    display: inline-block;
+    width: 65px;
+}
+
+.ver-mas a {
+    font-family: "Quicksand", sans-serif;
+    color: #f6c76f;
 }
 
 
@@ -443,6 +481,10 @@ ul.separator.bio a {
 
 .owl-nav {
     display: none;
+}
+
+.fancybox-container {
+    cursor: default;
 }
 
 
@@ -795,40 +837,18 @@ ion-icon {
     top: 25px;
 }
 
+.zoom-icon ion-icon {
+    font-size: 48px;
+    color: #ffffff;
+    line-height: 44px;
+    --ionicon-stroke-width: 16px;
+    position: inherit;
+    z-index: 800;
+}
+
 .hand-right-90 {
     display: inline-block;
     transform: rotate(90deg);
-}
-
-.bio {
-    list-style-type: none;
-    font-size: 12px;
-}
-
-.bio li {
-    padding-left: 40px;
-    text-indent: -45px;
-    line-height: 32px;
-    ;
-}
-
-.two {
-    padding-left: 80px!important;
-    text-indent: -86px!important;
-}
-
-.one {
-    padding-left: 80px!important;
-    text-indent: -80px!important;
-}
-
-.bio-date {
-    color: #d88537;
-}
-
-.ver-mas a {
-    font-family: "Quicksand", sans-serif;
-    color: #f6c76f;
 }
 
 .material-icons {
@@ -1398,4 +1418,10 @@ body.preloader-site {
     .back-to-top-frame {
         bottom: 80px;
     }
+}
+
+.zoom-icon {
+    position: relative;
+    top: 80%;
+    left: 80%;
 }

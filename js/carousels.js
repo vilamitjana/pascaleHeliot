@@ -71,13 +71,29 @@ const fancyStyleModal = {
         '</div>',
 };
 
+
+const zoombutton = {
+    baseTpl: '<div class="fancybox-container" role="dialog" tabindex="-1">' +
+        '<div class="fancybox-bg"></div>' +
+        '<div class="fancybox-inner">' +
+        '<div class="fancybox-infobar"><span data-fancybox-index></span>&nbsp;/&nbsp;<span data-fancybox-count></span></div>' +
+        '<div class="fancybox-toolbar">{{buttons}}</div>' +
+        '<div class="fancybox-navigation">{{arrows}}</div>' +
+        '<div class="fancybox-stage"></div>' +
+        '<div class="fancybox-caption"><div class=""fancybox-caption__body"></div></div>' +
+        '</div>' +
+        '</div>',
+}
+
+{ /* <div class="zoom-icon link"><ion-icon class="ion-zoom" name="search-outline"></ion-icon></div> */ }
+
 const fancyStyle1 = {
     infobar: true,
     toolbar: "auto",
-    buttons: [
-        "close",
-        "zoom"
+    buttons: [,
+        "close"
     ],
+    baseTpl: zoombutton.baseTpl,
     animationEffect: "zoom-in-out",
     animationDuration: 1000,
     transitionEffect: "zoom-in-out",
@@ -89,9 +105,10 @@ const fancyStyle1 = {
 const fancyStyle2 = {
     infobar: true,
     toolbar: "auto",
-    buttons: [
+    buttons: [,
         "close"
     ],
+    baseTpl: zoombutton.baseTpl,
     animationEffect: "zoom-in-out",
     animationDuration: 1000,
     transitionEffect: "zoom-in-out",
@@ -120,6 +137,7 @@ $('[data-fancybox="ua7"]').fancybox(fancyStyle2);
 $('[data-fancybox="ua8"]').fancybox(fancyStyle2);
 
 $('[data-fancybox="modal-text"]').fancybox(fancyStyleModal);
+
 
 
 // ========================================================================= //
