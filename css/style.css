@@ -1036,6 +1036,9 @@ https://codepen.io/fancyapps/pen/rmwyXN
 .fancybox-morphing .fancybox-button--close:hover {
   background: rgba(0, 0, 0, 0.25);
 }
+.fancybox-button.fancybox-focus {
+  outline: none;
+}
 
 /* Styling for element used in example */
 
@@ -1138,14 +1141,19 @@ img {
   text-align: left;
   color: #fff;
   vertical-align: middle;
+  width: fit-content;
   max-width: 75vw;
+  height: auto;
+  max-height: 100vh;
+  padding-bottom: 1.5em;
+  margin: auto auto;
 }
 
 /* Reveal content with different delays */
 
-.fancybox-slide--current .animated-modal {
+/* .fancybox-slide--current .animated-modal {
   margin-top: 9vh;
-}
+} */
 
 .fancybox-slide--current .animated-modal h2 {
   transition-delay: 0.5s;

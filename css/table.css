@@ -1,0 +1,14 @@
+.bio-date {
+    color: #d88537;
+    width: 95px;
+}
+
+.separator.bio {
+    font-size: 0.9em;
+    line-height: 1.7em;
+    letter-spacing: 0px;
+}
+
+table.bio {
+    margin: auto;
+}
