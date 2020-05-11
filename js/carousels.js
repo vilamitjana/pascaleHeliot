@@ -64,7 +64,7 @@ const flechas2 = {
 const closeIcon = {
     smallBtn:
         '<button data-fancybox-close class="fancybox-button fancybox-button--close" title="{{CLOSE}}">' +
-        '<svg height="15" width="15"><circle cx="15" cy="15" r="8" stroke="white" stroke-width="1" fill="white" /></svg>' +
+        '<svg height="15" width="15"><circle cx="15" cy="15" r="8" stroke="#e5c059" stroke-width="1" fill="#e5c059" /></svg>' +
         "</button>"
 
 };
@@ -77,9 +77,9 @@ const fancyStyleModal = {
         "close"
     ],
     animationEffect: "zoom-in-out",
-    animationDuration: 1000,
+    animationDuration: 2000,
     transitionEffect: "zoom-in-out",
-    transitionDuration: 1000,
+    transitionDuration: 1500,
     arrows: false,
     btnTpl :closeIcon,
     baseTpl: '<div class="fancybox-container" role="dialog" tabindex="-1">' +

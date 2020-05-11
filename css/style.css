@@ -1141,8 +1141,7 @@ img {
   text-align: left;
   color: #fff;
   vertical-align: middle;
-  width: fit-content;
-  max-width: 75vw;
+  max-width: 40vw;
   height: auto;
   max-height: 100vh;
   padding-bottom: 1.5em;
@@ -1280,7 +1279,7 @@ body.preloader-site {
 .preloader-wrapper {
   height: 100%;
   width: 100%;
-  background: #eae7de;
+  background: #000000;
   position: fixed;
   top: 0;
   left: 0;

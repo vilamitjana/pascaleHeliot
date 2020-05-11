@@ -213,6 +213,14 @@
     float: none;
     display: inline-block;
   }
+
+  /* .fancybox-slide--current .animated-modal,
+.fancybox-slide--current .animated-modal h2,
+.fancybox-slide--current .animated-modal p {
+  max-width: 100vw;
+  max-width: 100vh
+} */
+
 }
 
 /** Width between 600px to 0

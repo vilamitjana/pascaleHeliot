@@ -179,13 +179,13 @@ Burger king
     width: 45px;
     display: block;
     cursor: none;
-    top: 20px;
-    right: 20px;
+    top: 10vh;
+    right: 10vw;
 }
 
 .open-overlay span {
     display: block;
-    height: 1px;
+    height: 2px;
     background-color: #fff;
     cursor: none;
     margin-top: 12px;
