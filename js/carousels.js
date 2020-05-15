@@ -76,10 +76,7 @@ const fancyStyleModal = {
     buttons: [
         "close"
     ],
-    animationEffect: "zoom-in-out",
-    animationDuration: 2000,
-    transitionEffect: "zoom-in-out",
-    transitionDuration: 1500,
+
     arrows: false,
     btnTpl :closeIcon,
     baseTpl: '<div class="fancybox-container" role="dialog" tabindex="-1">' +
@@ -89,7 +86,7 @@ const fancyStyleModal = {
         '<div class="fancybox-toolbar">{{buttons}}</div>' +
         '<div class="fancybox-navigation">{{arrows}}</div>' +
         '<div class="fancybox-stage"></div>' +
-        '<div class="fancybox-caption"><div class=""fancybox-caption__body"></div></div>' +
+        '<div class="fancybox-caption"><div class="fancybox-caption__body"></div></div>' +
         '</div>' +
         '</div>',
 };
@@ -103,7 +100,7 @@ const zoombutton = {
         '<div class="fancybox-toolbar">{{buttons}}</div>' +
         '<div class="fancybox-navigation">{{arrows}}</div>' +
         '<div class="fancybox-stage"></div>' +
-        '<div class="fancybox-caption"><div class=""fancybox-caption__body"></div></div>' +
+        '<div class="fancybox-caption"><div class="fancybox-caption__body"></div></div>' +
         '</div>' +
         '</div>',
 }
