@@ -76,9 +76,8 @@ const fancyStyleModal = {
     buttons: [
         "close"
     ],
-
     arrows: false,
-    btnTpl :closeIcon,
+    btnTpl: closeIcon,
     baseTpl: '<div class="fancybox-container" role="dialog" tabindex="-1">' +
         '<div class="fancybox-bg-modal"></div>' +
         '<div class="fancybox-inner">' +
@@ -86,7 +85,7 @@ const fancyStyleModal = {
         '<div class="fancybox-toolbar">{{buttons}}</div>' +
         '<div class="fancybox-navigation">{{arrows}}</div>' +
         '<div class="fancybox-stage"></div>' +
-        '<div class="fancybox-caption"><div class="fancybox-caption__body"></div></div>' +
+        '<div class="fancybox-caption"><div id="captionID" class="fancybox-caption__body"></div></div>' +
         '</div>' +
         '</div>',
 };
@@ -99,13 +98,57 @@ const zoombutton = {
         '<div class="fancybox-infobar"><span data-fancybox-index></span>&nbsp;/&nbsp;<span data-fancybox-count></span></div>' +
         '<div class="fancybox-toolbar">{{buttons}}</div>' +
         '<div class="fancybox-navigation">{{arrows}}</div>' +
-        '<div class="fancybox-stage"></div>' +
-        '<div class="fancybox-caption"><div class="fancybox-caption__body"></div></div>' +
+        '<div  class="fancybox-stage"></div>' +
+        '<div class="fancybox-caption"><div id="captionID" class="fancybox-caption__body"></div></div>' +
         '</div>' +
         '</div>',
 }
 
-{ /* <div class="zoom-icon link"><ion-icon class="ion-zoom" name="search-outline"></ion-icon></div> */ }
+const captionEffect = (current) => {
+    let imgW = parseInt(current.width);
+    let imgH = parseInt(current.height);
+
+    /* get zoom image heigth*/
+    if (imgW >= $(document).width() || imgH >= $(document).height()) {
+        imgW = parseInt(current.$content[0].style.width.replace(/px/g, ""));
+        imgH = parseInt(current.$content[0].style.height.replace(/px/g, ""));
+    }
+
+    /* Rigth gutter size */
+    const gutterRight = (parseInt($(window).width()) - imgW) / 2;
+    const captionWidth = gutterRight - 80;
+
+
+    /* Get image position */
+    let cords = current.$content[0].style.transform.substring(9).replace("(", "").replace(")", "").replace(/px/g, "").split(',');
+
+    /* Get Text new position */
+    const Xpos = parseInt(cords[0]) + parseInt(imgW) + 50;
+    const Ypos = parseInt(cords[1]);
+
+    /* If gutter les then 200 put under image */
+    if ($(document).width() > 991) {
+        /* set caption next to image*/
+        $('#captionID').css({
+            'position': 'absolute',
+            "top": Ypos + "px",
+            "left": Xpos + "px",
+            "width": captionWidth + "px",
+            "transition": "all 1s ease-in-out",
+            "-moz-transition": "all 1s ease-in-out",
+            "-webkit-transition": "all 1s ease-in-out",
+        });
+
+        $('.fancybox-content').mouseover(() => {
+            $('#captionID').css({ "opacity": 1 })
+        });
+        $('.fancybox-content').mouseout(() => {
+            $('#captionID').css({ "opacity": 0 })
+        });
+    }
+
+
+}
 
 const fancyStyle1 = {
     infobar: true,
@@ -120,7 +163,13 @@ const fancyStyle1 = {
     transitionDuration: 1000,
     btnTpl: flechas,
     spinnerTpl: '<div class="preloader-wrapper-gal"><div class="preloader">  <img src="/img/Interwind-1s-327px.svg" alt="preloader"></div></div>',
+    afterShow: (instance, current) => {
+        // console.log('AfterShow', current, instance);
+        captionEffect(current)
+    }
 };
+
+
 
 const fancyStyle2 = {
     infobar: true,
@@ -135,6 +184,10 @@ const fancyStyle2 = {
     transitionDuration: 1000,
     btnTpl: flechas2,
     spinnerTpl: '<div class="preloader-wrapper-gal"><div class="preloader">  <img src="/img/Interwind-1s-327px.svg" alt="preloader"></div></div>',
+    afterShow: (instance, current) => {
+        // console.log('AfterShow', current, instance);
+        captionEffect(current)
+    }
 };
 
 $('[data-fancybox="authors"]').fancybox(fancyStyle2);
@@ -159,21 +212,14 @@ $('[data-fancybox="ua8"]').fancybox(fancyStyle2);
 $('[data-fancybox="modal-text"]').fancybox(fancyStyleModal);
 
 
+$().fancybox({
+    selector: '[data-fancybox="twister"]',
+    afterShow: function () { console.log('check me'); }
+});
 
 // ========================================================================= //
-// Morph button
+// Put Caption
 // ========================================================================= //
-
-
-
-
-// Step 2: Start using it!
-// =======================
-
-// $("[data-morphing]").fancyMorph({
-//   hash: "morphing"
-// });
-
 
 // ========================================================================= //
 // carousels

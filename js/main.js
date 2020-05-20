@@ -121,8 +121,6 @@ $(document).ready(function() {
     });
 
 
-
-
 });
 
 // ========================================================================= //
@@ -132,4 +130,11 @@ $(document).ready(function() {
 $(window).load(function() {
     $('.preloader-wrapper').fadeOut();
     $('body').removeClass('preloader-site');
+
+
+
+
 });
+
+
+

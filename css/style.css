@@ -9,8 +9,7 @@ html {
   scroll-behavior: smooth;
 }
 
-
-/*  General Styling
+/*  General Styling */
 /*-----------------------------------------------------------------------------------*/
 
 body {
@@ -704,14 +703,12 @@ p.separator {
   list-style: none;
   margin: 0;
   padding: 0;
-  
 }
 
 .contact-contact h3 {
   letter-spacing: 10px;
   color: #f80794;
   font-size: 60px;
-  
 }
 
 .contact-details li {
@@ -1185,25 +1182,22 @@ img {
   letter-spacing: 10px;
 }
 
+/* End Modal ====================================*/
+
 .fancybox-caption {
   /* setup caption */
   bottom: unset;
-  left: unset;
-  right: 0;
-  background: unset; 
+  left: 0;
+  right: unset;
+  background: unset;
   max-height: 0px;
-  top: unset;
+  top: 0;
 }
 
-.fancybox-caption.fancybox-caption--separate {
-  /* position: absolute; */
-  /* bottom: unset; */
-  /* min-height: 100vh; */
-  /* left: unset; */
-  /* bottom: 0vh; */
-  /* right: 5vw; */
-  /* background: unset; */
+.fancybox-caption--separate {
+  margin-top: 0px;
 }
+
 .fancybox-caption__body {
   /* position: absolute; */
   /* max-height: 100vh; */
@@ -1211,17 +1205,17 @@ img {
   /* right: 0vw; */
   /* bottom: 4.5vh; */
   /* width: 19vw; */
-  overflow:visible;
+  overflow: visible;
+  text-align: left;
+  opacity: 0;
+  transition:all 1s ease-in-out;
+  -moz-transition:all 1s ease-in-out;
+  -webkit-transition:all 1s ease-in-out;
 }
 .fancybox-caption__body span {
-  text-align: right;
+  letter-spacing: 12px;
   position: relative;
-   writing-mode: vertical-rl;
-   text-orientation: upright; 
-   bottom: -4px;
-   right: 10px;
-   height:92vh;
-   
+  left: 0px;
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -1426,8 +1420,6 @@ body.preloader-site {
   top: 80%;
   left: 80%;
 }
-
-
 
 .single-post {
   text-align: justify;
