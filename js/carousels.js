@@ -208,6 +208,7 @@ $('[data-fancybox="ua5"]').fancybox(fancyStyle2);
 $('[data-fancybox="ua6"]').fancybox(fancyStyle2);
 $('[data-fancybox="ua7"]').fancybox(fancyStyle2);
 $('[data-fancybox="ua8"]').fancybox(fancyStyle2);
+$('[data-fancybox="ua9"]').fancybox(fancyStyle2);
 
 $('[data-fancybox="modal-text"]').fancybox(fancyStyleModal);
 
@@ -384,6 +385,17 @@ $('#basic-ua7').slick({
 });
 
 $('#basic-ua8').slick({
+    dots: true,
+    infinite: true,
+    speed: 3000,
+    fade: true,
+    cssEase: 'linear',
+    dots: false,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 6000
+});
+$('#basic-ua9').slick({
     dots: true,
     infinite: true,
     speed: 3000,
