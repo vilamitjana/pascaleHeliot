@@ -17,8 +17,34 @@ $('.services-carousel').owlCarousel({
 // ========================================================================= //
 //  Image Gallary
 // ========================================================================= //
+
+
+const closeIcon = {
+    smallBtn:
+        '<button data-fancybox-close class="fancybox-button fancybox-button--close link" title="{{CLOSE}}">' +
+        '<svg height="15" width="15"><circle cx="15" cy="15" r="8" stroke="#ffffff" stroke-width="1" fill="#ffffff" /></svg>' +
+        "</button>"
+
+};
+
+const closeIconModal = {
+    smallBtn:
+        '<button data-fancybox-close class="fancybox-button fancybox-button--close link modal" style="stroke:none;outline: none;" title="{{CLOSE}}">' +
+        '<svg height="15" width="15"><circle cx="15" cy="15" r="8" stroke="#ffffff" stroke-width="1" fill="#ffffff" /></svg>' +
+        "</button>"
+
+};
+
+const zoomIcon = {
+    smallBtn:
+        '<button id="glass" data-fancybox-zoom class="fancybox-button fancybox-button--zoom link" title="{{ZOOM}}">' +
+        "<svg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'><title>ionicons-v5-f</title><path d='M221.09,64A157.09,157.09,0,1,0,378.18,221.09,157.1,157.1,0,0,0,221.09,64Z' style='fill:none;stroke:#fff;stroke-miterlimit:10;stroke-width:16px'/><line x1='338.29' y1='338.29' x2='448' y2='448' style='fill:none;stroke:#fff;stroke-linecap:round;stroke-miterlimit:10;stroke-width:16px'/></svg>" +
+        "</button>",
+
+};
+
 const flechas = {
-    arrowLeft: '<button data-fancybox-prev class="fancybox-button fancybox-button--arrow_left" title="{{PREV}}">' +
+    arrowLeft: '<button data-fancybox-prev class="fancybox-button fancybox-button--arrow_left link" title="{{PREV}}">' +
         '<div>' +
         '<svg xmlns="http://www.w3.org/2000/svg" data-name="arrowLeft" viewBox="0 0 64 80" x="0px" y="0px">' +
         '<polygon points="35.35 43.77 21.45 32 35.35 20.24 36.65 21.77 24.55 32 36.65 42.24 35.35 43.77"/>' +
@@ -26,7 +52,7 @@ const flechas = {
         '</svg>' +
         '</div>' +
         "</button>",
-    arrowRight: '<button data-fancybox-next class="fancybox-button fancybox-button--arrow_right" title="{{NEXT}}">' +
+    arrowRight: '<button data-fancybox-next class="fancybox-button fancybox-button--arrow_right link" title="{{NEXT}}">' +
         '<div>' +
         '<svg xmlns="http://www.w3.org/2000/svg" data-name="arrowRight" viewBox="0 0 64 80" x="0px" y="0px">' +
         '<polygon points="28.65 43.77 27.35 42.24 39.45 32 27.35 21.77 28.65 20.24 42.55 32 28.65 43.77"/>' +
@@ -35,9 +61,9 @@ const flechas = {
         '</div>' +
         "</button>",
     close:
-        '<button data-fancybox-close class="fancybox-button fancybox-button--close" title="{{CLOSE}}">' +
-        '<svg height="15" width="15"><circle cx="15" cy="15" r="10" stroke="black" stroke-width="1" fill="white" /></svg>' +
-        "</button>",
+        closeIcon.smallBtn,
+    zoom:
+        zoomIcon.smallBtn,
     smallBtn: true,
 };
 
@@ -54,20 +80,14 @@ const flechas2 = {
         '</div>' +
         "</button>",
     close:
-        '<button data-fancybox-close class="fancybox-button fancybox-button--close" title="{{CLOSE}}">' +
-        '<svg height="15" width="15"><circle cx="15" cy="15" r="10" stroke="black" stroke-width="1" fill="white" /></svg>' +
-        "</button>",
+        closeIcon.smallBtn,
+    zoom:
+        zoomIcon.smallBtn,
     smallBtn: true,
 
 };
 
-const closeIcon = {
-    smallBtn:
-        '<button data-fancybox-close class="fancybox-button fancybox-button--close" title="{{CLOSE}}">' +
-        '<svg height="15" width="15"><circle cx="15" cy="15" r="8" stroke="#e5c059" stroke-width="1" fill="#e5c059" /></svg>' +
-        "</button>"
 
-};
 
 
 const fancyStyleModal = {
@@ -76,15 +96,19 @@ const fancyStyleModal = {
     buttons: [
         "close"
     ],
+    animationEffect: "fade",
+    animationDuration: 1000,
+    transitionEffect: "fade",
+    transitionDuration: 1000,
     arrows: false,
-    btnTpl: closeIcon,
+    btnTpl: closeIconModal,
     baseTpl: '<div class="fancybox-container" role="dialog" tabindex="-1">' +
-        '<div class="fancybox-bg-modal"></div>' +
+        '<div class="fancybox-bg "></div>' +
         '<div class="fancybox-inner">' +
         '<div class="fancybox-infobar"><span data-fancybox-index></span>&nbsp;/&nbsp;<span data-fancybox-count></span></div>' +
         '<div class="fancybox-toolbar">{{buttons}}</div>' +
         '<div class="fancybox-navigation">{{arrows}}</div>' +
-        '<div class="fancybox-stage"></div>' +
+        '<div class="fancybox-stage modal-text"></div>' +
         '<div class="fancybox-caption"><div id="captionID" class="fancybox-caption__body"></div></div>' +
         '</div>' +
         '</div>',
@@ -92,19 +116,25 @@ const fancyStyleModal = {
 
 
 const zoombutton = {
-    baseTpl: '<div class="fancybox-container" role="dialog" tabindex="-1">' +
-        '<div class="fancybox-bg"></div>' +
+    baseTpl: '<div  class="fancybox-container" role="dialog" tabindex="-1">' +
+        '<div id="modal" class="fancybox-bg"></div>' +
         '<div class="fancybox-inner">' +
         '<div class="fancybox-infobar"><span data-fancybox-index></span>&nbsp;/&nbsp;<span data-fancybox-count></span></div>' +
         '<div class="fancybox-toolbar">{{buttons}}</div>' +
         '<div class="fancybox-navigation">{{arrows}}</div>' +
-        '<div  class="fancybox-stage"></div>' +
+        '<div  class="fancybox-stage"><ion-icon id="glass" name="search-outline"></ion-icon></div>' +
         '<div class="fancybox-caption"><div id="captionID" class="fancybox-caption__body"></div></div>' +
         '</div>' +
         '</div>',
 }
 
-const captionEffect = (current) => {
+const captionEffect = (instance, current) => {
+    // add link class
+    $("#glass").addClass("link");
+
+
+    initHovers();
+    // get image height
     let imgW = parseInt(current.width);
     let imgH = parseInt(current.height);
 
@@ -126,9 +156,26 @@ const captionEffect = (current) => {
     const Xpos = parseInt(cords[0]) + parseInt(imgW) + 50;
     const Ypos = parseInt(cords[1]);
 
+    const XposGlass = parseInt(cords[0]) + parseInt(imgW) - 70;
+    const YposGlass = parseInt(cords[1]) + parseInt(imgH) - 70;
+
+    const glassOp = imgH > 850 ? 1 : 0;
+
     /* If gutter les then 200 put under image */
     if ($(document).width() > 991) {
         /* set caption next to image*/
+        $('#glass').css({
+            'position': 'absolute',
+            "top": YposGlass + "px",
+            "left": XposGlass + "px",
+            "z-index": 99999,
+            "color": "white",
+            "font-size": "50px",
+            "transition": "all 1s ease-in-out",
+            "-moz-transition": "all 1s ease-in-out",
+            "-webkit-transition": "all 1s ease-in-out",
+        });
+
         $('#captionID').css({
             'position': 'absolute',
             "top": Ypos + "px",
@@ -139,12 +186,34 @@ const captionEffect = (current) => {
             "-webkit-transition": "all 1s ease-in-out",
         });
 
-        $('.fancybox-content').mouseover(() => {
+        $('.fancybox-content').mouseenter(() => {
             $('#captionID').css({ "opacity": 1 })
+            $('#glass').css({ "opacity": glassOp })
         });
-        $('.fancybox-content').mouseout(() => {
+        $('.fancybox-content').mouseleave(() => {
             $('#captionID').css({ "opacity": 0 })
+            $('#glass').css({ "opacity": 0 })
         });
+
+
+        $('#glass').mouseenter(() => {
+            $('#captionID').css({ "opacity": 1 })
+            $('#glass').css({ "opacity": glassOp })
+
+        });
+
+        $('#glass').click(() => {
+
+            if (instance.isScaledDown()) {
+                instance.scaleToActual();
+
+            } else {
+                instance.scaleToFit();
+            }
+
+
+        });
+
     }
 
 
@@ -153,8 +222,9 @@ const captionEffect = (current) => {
 const fancyStyle1 = {
     infobar: true,
     toolbar: "auto",
-    buttons: [,
+    buttons: [
         "close"
+
     ],
     baseTpl: zoombutton.baseTpl,
     animationEffect: "zoom-in-out",
@@ -165,7 +235,7 @@ const fancyStyle1 = {
     spinnerTpl: '<div class="preloader-wrapper-gal"><div class="preloader">  <img src="/img/Interwind-1s-327px.svg" alt="preloader"></div></div>',
     afterShow: (instance, current) => {
         // console.log('AfterShow', current, instance);
-        captionEffect(current)
+        captionEffect(instance, current)
     }
 };
 
@@ -174,7 +244,7 @@ const fancyStyle1 = {
 const fancyStyle2 = {
     infobar: true,
     toolbar: "auto",
-    buttons: [,
+    buttons: [
         "close"
     ],
     baseTpl: zoombutton.baseTpl,
@@ -186,7 +256,7 @@ const fancyStyle2 = {
     spinnerTpl: '<div class="preloader-wrapper-gal"><div class="preloader">  <img src="/img/Interwind-1s-327px.svg" alt="preloader"></div></div>',
     afterShow: (instance, current) => {
         // console.log('AfterShow', current, instance);
-        captionEffect(current)
+        captionEffect(instance, current)
     }
 };
 
@@ -212,11 +282,6 @@ $('[data-fancybox="ua9"]').fancybox(fancyStyle2);
 
 $('[data-fancybox="modal-text"]').fancybox(fancyStyleModal);
 
-
-$().fancybox({
-    selector: '[data-fancybox="twister"]',
-    afterShow: function () { console.log('check me'); }
-});
 
 // ========================================================================= //
 // Put Caption

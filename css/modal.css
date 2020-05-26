@@ -1,0 +1,203 @@
+/*
+
+    Styles for animated modal
+    =========================
+
+*/
+
+.fancybox-is-open .fancybox-bg {
+  opacity: 1;
+  background-color: #000;
+}
+
+/* Start state */
+.fancybox-stage.modal-text {
+  opacity: 1;
+  background: rgb(28, 113, 106);
+  background: linear-gradient(
+    90deg,
+    rgba(28, 113, 106, 1) 0%,
+    rgba(254, 123, 220, 1) 100%
+  );
+}
+
+.animated-modal {
+  max-width: 40vw;
+  overflow: hidden;
+  background: rgb(28, 113, 106, 0);
+  /* transform: translateY(-80px); */
+  /* transition: all 0.5s; Should match `data-animation-duration` parameter */
+}
+
+.animated-modal * {
+  color: #fff;
+  font-family: "Quicksand", sans-serif;
+}
+
+.title-author {
+  letter-spacing: 10px;
+}
+.fancybox-stage p.title-author {
+  font-weight: bold;
+  font-size: 1.8em;
+}
+
+.fancybox-stagel p {
+  
+  line-height: 1em;
+  font-size: 1.4em;
+}
+
+.fancybox-stage p.title-Colaboration {
+  font-weight: normal;
+  font-size: 1em;
+  letter-spacing: 1em;
+}
+
+
+/* new  ====================================*/
+
+/* Remove cursor */
+
+.owl-nav {
+  display: none;
+}
+
+.fancybox-container {
+  cursor: none;
+}
+
+.fancybox-can-zoomOut .fancybox-content {
+  cursor: none;
+}
+
+.fancybox-can-zoomIn .fancybox-content {
+  cursor: none;
+}
+
+.fancybox-can-swipe .fancybox-content,
+.fancybox-can-pan .fancybox-content {
+  cursor: none;
+}
+
+.fancybox-is-grabbing .fancybox-content {
+  cursor: none;
+}
+
+.fancybox-container [data-selectable="true"] {
+  cursor: none;
+}
+.fancybox-error {
+  cursor: none;
+}
+.fancybox-button {
+  cursor: none;
+}
+.fancybox-button[disabled],
+.fancybox-button[disabled]:hover {
+  cursor: none;
+}
+.fancybox-close-small {
+  cursor: none;
+}
+.fancybox-thumbs__list a {
+  cursor: none;
+}
+
+.fancybox-caption__body {
+  font-family: "Quicksand", sans-serif;
+  font-size: 14px;
+}
+/* END Remove cursor ======================================================================= */
+
+/* Modal ===============================================================================================*/
+
+/* End Modal ===============================================================================================*/
+
+/* Images ================================================================================================*/
+
+/*-----------------------------------------------------------------------------------*/
+
+/*  arrow effects  change icons background*/
+/*-----------------------------------------------------------------------------------*/
+
+.fancybox-navigation .fancybox-button {
+  width: 120px;
+  height: 120px;
+}
+
+.fancybox-button {
+  background: rgba(30, 30, 30, 0);
+  color: white;
+  stroke: white;
+}
+
+.fancybox-button.modal {
+    background: rgba(30, 30, 30, 0);
+    color: white;
+    stroke: white;
+    position: fixed;
+    top: 2vh;
+    left: 97vw;
+
+  }
+
+
+
+
+/*  END arrow effects ======================================================================= */
+
+/* End Images ================================================================================================*/
+
+/* caption and buttons =======================================================================*/
+
+.title-author {
+  letter-spacing: 10px;
+}
+
+.fancybox-caption {
+  /* setup caption */
+  bottom: unset;
+  left: 0;
+  right: unset;
+  background: unset;
+  max-height: 0px;
+  top: 0;
+}
+
+.fancybox-caption--separate {
+  margin-top: 0px;
+}
+
+.fancybox-caption__body {
+  /* position: absolute; */
+  /* max-height: 100vh; */
+  /* height: 100vh; */
+  /* right: 0vw; */
+  /* bottom: 4.5vh; */
+  /* width: 19vw; */
+  overflow: visible;
+  text-align: left;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -webkit-transition: all 1s ease-in-out;
+}
+.fancybox-caption__body span {
+  letter-spacing: 12px;
+  position: relative;
+  left: 0px;
+}
+
+#glass {
+  opacity: 0;
+  transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -webkit-transition: all 1s ease-in-out;
+}
+
+button.fancybox-button.fancybox-button--zoom {
+  width: 75px;
+  height: 75px;
+}
+/* end caption and buttons =======================================================================*/

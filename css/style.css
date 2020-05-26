@@ -459,14 +459,6 @@ ul.separator.bio a {
   background-color: #925c85;
 }
 
-.owl-nav {
-  display: none;
-}
-
-.fancybox-container {
-  cursor: default;
-}
-
 /*-----------------------------------------------------------------------------------*/
 
 /*   paintings
@@ -937,124 +929,8 @@ ion-icon {
   color: #121212;
 }
 
-/*-----------------------------------------------------------------------------------*/
 
-/*  arrow effects
-/*-----------------------------------------------------------------------------------*/
 
-.fancybox-navigation .fancybox-button {
-  width: 120px;
-  height: 120px;
-}
-
-.fancybox-button {
-  background: rgba(30, 30, 30, 0);
-  color: white;
-  stroke: white;
-}
-
-.fancybox-bg {
-  opacity: 1;
-}
-
-/*
-
-Advanced example - Morphing modal window
-
-https://codepen.io/fancyapps/pen/rmwyXN
-
-*/
-
-.morphing-btn-wrap {
-  display: inline-block;
-  position: relative;
-  text-align: left;
-}
-
-.morphing-btn {
-  box-sizing: border-box;
-  -webkit-transition: background 0.3s, color 0.2s 0.2s, width 0.2s 0s;
-  -moz-transition: background 0.3s, color 0.2s 0.2s, width 0.2s 0s;
-  -o-transition: background 0.3s, color 0.2s 0.2s, width 0.2s 0s;
-  transition: color 0.3s 0.2s, width 0.2s 0s;
-  white-space: nowrap;
-}
-
-.morphing-btn_circle {
-  color: transparent !important;
-  padding-left: 0;
-  padding-right: 0;
-  /* Override inline style rule */
-  -webkit-transition: color 0.2s 0s, width 0.3s 0.2s;
-  -moz-transition: color 0.2s 0s, width 0.3s 0.2s;
-  -o-transition: color 0.2s 0s, width 0.3s 0.2s;
-  transition: color 0.2s 0s, width 0.3s 0.2s;
-  width: 35.6px !important;
-}
-
-.morphing-btn-clone {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  background: #615e57;
-  border-radius: 50%;
-  position: fixed;
-  -webkit-transition: all 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
-  -moz-transition: all 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
-  -o-transition: all 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
-  transition: all 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
-  z-index: 1000;
-}
-
-.morphing-btn-clone_visible {
-  display: block;
-  -webkit-transform: scale(1) !important;
-  -moz-transform: scale(1) !important;
-  -ms-transform: scale(1) !important;
-  -o-transform: scale(1) !important;
-  transform: scale(1) !important;
-}
-
-.fancybox-morphing .fancybox-bg {
-  background: #000;
-  opacity: 1;
-}
-
-.fancybox-morphing .fancybox-toolbar {
-  right: 40px;
-  top: 20px;
-}
-
-.fancybox-morphing .fancybox-button--close {
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 50%;
-  color: #fff;
-}
-
-.fancybox-morphing .fancybox-button--close:hover {
-  background: rgba(0, 0, 0, 0.25);
-}
-.fancybox-button.fancybox-focus {
-  outline: none;
-}
-
-/* Styling for element used in example */
-
-#morphing-content {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  background: transparent;
-  line-height: 2;
-  margin: 0;
-  padding: 6em 10vw;
-  position: relative;
-  z-index: 1000;
-}
-
-#morphing-content * {
-  color: #fff;
-  font-size: 14px;
-  letter-spacing: 5px;
-}
 
 /*-----------------------------------------------------------------------------------*/
 
@@ -1075,148 +951,8 @@ img {
   width: 100%;
 }
 
-.fancybox-caption__body {
-  font-family: "Quicksand", sans-serif;
-  font-size: 14px;
-}
 
-/*-----------------------------------------------------------------------------------*/
 
-/*
-
-   Styles for animated modal
-   =========================
-
-*/
-
-/*-----------------------------------------------------------------------------------*/
-
-/* Start state */
-
-.animated-modal {
-  width: 50vw;
-  height: 50vh;
-  overflow: hidden;
-  transform: translateY(-50px);
-  transition: all 0.7s;
-}
-
-.animated-modal h2,
-.animated-modal p {
-  transform: translateY(-50px);
-  opacity: 0;
-  transition-property: transform, opacity;
-  transition-duration: 0.8s;
-}
-
-.fancybox-bg-modal {
-  opacity: 1;
-  width: 100vw;
-  height: 100vh;
-  background: rgb(28, 113, 106);
-  background: linear-gradient(
-    90deg,
-    rgba(28, 113, 106, 1) 0%,
-    rgba(254, 123, 220, 1) 100%
-  );
-}
-
-.fancybox-content {
-  background: none;
-}
-
-/* .fancybox-stage-modal {
-} */
-
-/* Final state */
-
-.fancybox-slide--current .animated-modal,
-.fancybox-slide--current .animated-modal h2,
-.fancybox-slide--current .animated-modal p {
-  transform: translateY(0);
-  opacity: 1;
-  text-align: left;
-  color: #fff;
-  vertical-align: middle;
-  max-width: 40vw;
-  height: auto;
-  max-height: 100vh;
-  padding-bottom: 1.5em;
-  margin: auto auto;
-}
-
-/* Reveal content with different delays */
-
-/* .fancybox-slide--current .animated-modal {
-  margin-top: 9vh;
-} */
-
-.fancybox-slide--current .animated-modal h2 {
-  transition-delay: 0.5s;
-}
-
-.fancybox-slide--current .animated-modal p {
-  transition-delay: 0.3s;
-  font-family: "Quicksand", sans-serif;
-  line-height: 1em;
-  font-size: 1.4em;
-}
-
-.fancybox-slide--current .animated-modal p.title-author {
-  font-weight: bold;
-  font-size: 1.8em;
-}
-
-.fancybox-slide--current .animated-modal p.title-Colaboration {
-  font-weight: normal;
-  font-size: 1em;
-  letter-spacing: 1em;
-}
-
-.fancybox-is-open .fancybox-bg {
-  opacity: 1;
-  background-color: #000;
-}
-
-.title-author {
-  letter-spacing: 10px;
-}
-
-/* End Modal ====================================*/
-
-.fancybox-caption {
-  /* setup caption */
-  bottom: unset;
-  left: 0;
-  right: unset;
-  background: unset;
-  max-height: 0px;
-  top: 0;
-}
-
-.fancybox-caption--separate {
-  margin-top: 0px;
-}
-
-.fancybox-caption__body {
-  /* position: absolute; */
-  /* max-height: 100vh; */
-  /* height: 100vh; */
-  /* right: 0vw; */
-  /* bottom: 4.5vh; */
-  /* width: 19vw; */
-  overflow: visible;
-  text-align: left;
-  opacity: 0;
-  transition:all 1s ease-in-out;
-  -moz-transition:all 1s ease-in-out;
-  -webkit-transition:all 1s ease-in-out;
-}
-.fancybox-caption__body span {
-  letter-spacing: 12px;
-  position: relative;
-  left: 0px;
-}
 
 /*-----------------------------------------------------------------------------------*/
 
@@ -1251,14 +987,14 @@ img {
   left: -2.5px;
   top: -2.5px;
   border-radius: 50%;
-  z-index: 11000;
+  z-index: 111000;
   background: var(--color-text);
 }
 
 .cursor--canvas {
   width: 100vw;
   height: 100vh;
-  z-index: 12000;
+  z-index: 112000;
 }
 
 .page,
@@ -1344,7 +1080,6 @@ body.preloader-site {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-
 }
 
 /*-----------------------------------------------------------------------------------*/

@@ -36,7 +36,7 @@ let isStuck = false;
 let showCursor = false;
 let group, stuckX, stuckY, fillOuterCursor;
 
-const initCanvas = () => {
+export const initCanvas = () => {
 
     const canvas = document.querySelector(".cursor--canvas");
     const shapeBounds = {
@@ -166,7 +166,7 @@ const initCanvas = () => {
 initCanvas();
 
 
-const initHovers = () => {
+export const  initHovers = () => {
 
     // find the center of the link element and set stuckX and stuckY
     // these are needed to set the position of the noisy circle
@@ -185,10 +185,13 @@ const initHovers = () => {
 
     // add event listeners to all items
     const linkItems = document.querySelectorAll(".link");
+
     linkItems.forEach(item => {
         item.addEventListener("mouseenter", handleMouseEnter);
         item.addEventListener("mouseleave", handleMouseLeave);
     });
+
+    
 };
 
 initHovers();
