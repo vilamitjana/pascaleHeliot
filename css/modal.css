@@ -28,6 +28,11 @@
   /* transform: translateY(-80px); */
   /* transition: all 0.5s; Should match `data-animation-duration` parameter */
 }
+@media (max-width: 970px) {
+  .animated-modal {
+    max-width: 90vw;
+  }
+}
 
 .animated-modal * {
   color: #fff;
@@ -43,7 +48,6 @@
 }
 
 .fancybox-stagel p {
-  
   line-height: 1em;
   font-size: 1.4em;
 }
@@ -53,7 +57,6 @@
   font-size: 1em;
   letter-spacing: 1em;
 }
-
 
 /* new  ====================================*/
 
@@ -133,17 +136,13 @@
 }
 
 .fancybox-button.modal {
-    background: rgba(30, 30, 30, 0);
-    color: white;
-    stroke: white;
-    position: fixed;
-    top: 2vh;
-    left: 97vw;
-
-  }
-
-
-
+  background: rgba(30, 30, 30, 0);
+  color: white;
+  stroke: white;
+  position: fixed;
+  top: 2vh;
+  left: 90vw;
+}
 
 /*  END arrow effects ======================================================================= */
 
@@ -188,8 +187,19 @@
   position: relative;
   left: 0px;
 }
+@media (max-width: 990px) {
+  .span-long {
+    letter-spacing: 0px !important;
+  }
+}
 
 #glass {
+  opacity: 0;
+  transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -webkit-transition: all 1s ease-in-out;
+}
+#minus {
   opacity: 0;
   transition: all 1s ease-in-out;
   -moz-transition: all 1s ease-in-out;

@@ -256,8 +256,7 @@ $(function () {
                 return;
             }
 
-            // Set initial width, because it is not possible to start CSS transition from "auto"
-            self.$btn
+            // Set initial width, because it is not possible to start CSS transition from "autoóleo    self.$btn
                 .width(self.$btn.width())
                 .parent()
                 .width(self.$btn.outerWidth());
@@ -307,8 +306,7 @@ $(function () {
                 left: pos.left + $btn.outerWidth() * 0.5 - $btn.outerWidth() * scale * 0.5 - $(window).scrollLeft(),
                 width: $btn.outerWidth() * scale,
                 height: $btn.outerHeight() * scale,
-                transform: "scale(" + 1 / scale + ")"
-            });
+                transform: "scale(" + 1 / scale + ")óleo    });
         };
 
         Morphing.prototype.getScale = function () {
