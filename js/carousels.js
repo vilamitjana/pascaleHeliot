@@ -135,10 +135,90 @@ const zoombutton = {
         '</div>',
 }
 
-const CaptionPostionSet = (XposGlass, YposGlass, captionWidth) => {
+const captionListeners = (glassOp) => {
+
+
+    /* if on desktop add mouse events */
+
+    $('#glass').mouseenter(() => {
+        $('#captionID').css({ "opacity": 1 })
+        $('#glass').css({ "opacity": glassOp })
+
+    });
+
+    $('#minus').mouseenter(() => {
+        $('#captionID').css({ "opacity": 1 })
+        $('#glass').css({ "opacity": glassOp })
+
+    });
+
+    $('.fancybox-content').mouseenter(() => {
+        $('#captionID').css({ "opacity": 1 })
+        $('#glass').css({ "opacity": glassOp })
+
+    });
+
+    $('.fancybox-content').mouseleave(() => {
+        $('#captionID').css({ "opacity": 0 })
+        $('#glass').css({ "opacity": 0 })
+    });
+
+
+    $('#glass').click(() => {
+        if (instance.isScaledDown()) {
+            instance.scaleToActual();
+            glassOp = 0;
+            $('#glass').css({
+                "opacity": "0",
+            });
+            $('#minus').css({
+                "opacity": "1",
+            });
+
+
+        } else {
+            glassOp = 1;
+            instance.scaleToFit();
+            $('#glass').css({
+                "opacity": "1",
+            });
+            $('#minus').css({
+                "opacity": "0",
+            });
+        }
+    });
+
+    $('#minus').click(() => {
+        if (instance.isScaledDown()) {
+            instance.scaleToActual();
+            glassOp = 0;
+            $('#glass').css({
+                "opacity": "0",
+            });
+            $('#minus').css({
+                "opacity": "1",
+            });
+
+
+        } else {
+            instance.scaleToFit();
+            glassOp = 1;
+            $('#glass').css({
+                "opacity": "1",
+            });
+            $('#minus').css({
+                "opacity": "0",
+            });
+        }
+    });
+
+}
+
+
+const captionPostionSet = (XposGlass, YposGlass, Xpos, Ypos, captionWidth) => {
     /* set caption next to image*/
     $('#glass').css({
-        'position': 'absolute',
+        'position': 'fixed',
         "top": YposGlass + "px",
         "left": XposGlass + "px",
         "z-index": 99999,
@@ -150,7 +230,7 @@ const CaptionPostionSet = (XposGlass, YposGlass, captionWidth) => {
     });
 
     $('#minus').css({
-        'position': 'absolute',
+        'position': 'fixed',
         "top": YposGlass + "px",
         "left": XposGlass + "px",
         "z-index": 99999,
@@ -161,9 +241,8 @@ const CaptionPostionSet = (XposGlass, YposGlass, captionWidth) => {
         "-moz-transition": "all 1s ease-in-out",
         "-webkit-transition": "all 1s ease-in-out",
     });
-
     $('#captionID').css({
-        'position': 'absolute',
+        'position': 'fixed',
         "top": Ypos + "px",
         "left": Xpos + "px",
         "width": captionWidth + "px",
@@ -171,7 +250,6 @@ const CaptionPostionSet = (XposGlass, YposGlass, captionWidth) => {
         "-moz-transition": "all 1s ease-in-out",
         "-webkit-transition": "all 1s ease-in-out",
     });
-
 }
 
 
@@ -180,16 +258,11 @@ const captionEffect = (instance, current) => {
     $("#glass").addClass("link");
     $("#minus").addClass("link");
 
-    const lanscape = ($(window).width() < $(window).height()) ? true : false;
-    const mobile = $(document).width() <= 992 ? true : false;
-
-    console.log(lanscape);
-
-    console.log(mobile)
-
+    /* get media and oriantation */
+    const lanscape = ($(window).width() >= $(window).height()) ? true : false;
+    const mobile = $(document).width() <= 1024 ? true : false;
 
     initHovers();
-
 
     // get image height
     let imgW = parseInt(current.width);
@@ -200,19 +273,20 @@ const captionEffect = (instance, current) => {
 
     /* get zoom image heigth*/
     if (imgW >= imgWZoomed || imgH >= imgHZoomed) {
-
         imgW = parseInt(imgWZoomed);
         imgH = parseInt(imgHZoomed);
     }
+
+
+    /* get image oriantation*/
+    const imgOriatationLandscape = imgW >= imgH ? true : false;
 
     /*  Caluculate Caption position */
     const gutterRight = (parseInt($(window).width()) - imgW) / 2;
     const gutterBottom = (parseInt($(window).height()) - imgH) / 2;
 
-    /* Rigth gutter size */
-
-    const captionWidth = gutterRight - 80;
-
+    /* Right gutter size */
+    let captionWidth = gutterRight - 80;
 
     /* Get image position */
     let cords = current.$content[0].style.transform.substring(9).replace("(", "").replace(")", "").replace(/px/g, "").split(',');
@@ -225,28 +299,37 @@ const captionEffect = (instance, current) => {
     let YposGlass = parseInt(cords[1]) + parseInt(imgH) - 70;
 
     let glassOp = imgH > 850 ? 1 : 0;
-    /* if Landscape desktop */
-    if (lanscape && !mobile) {
-        CaptionPostionSet(XposGlass, YposGlass, captionWidth);
-    }
-    /* if Landscape mobile */
-    if (lanscape && mobile) {
-        CaptionPostionSet(XposGlass, YposGlass, captionWidth);
-    }
 
-    /* if Portrait desktop */
-    if (!lanscape && !mobile) {
-        CaptionPostionSet(XposGlass, YposGlass, captionWidth);
-    }
+    /* Calculate image position depending on media and image oriantation*/
 
-    /* if Portrait mobile */
-    if (!lanscape && mobile) {
-        CaptionPostionSet(XposGlass, YposGlass, captionWidth);
+    // captionPostionSet(XposGlass, YposGlass, Xpos, Ypos, captionWidth);
+
+    /* desktop lanscape image lanscape  && desktop lanscape image Portrait */
+    if (lanscape) {
+        if (gutterRight < 230) {
+            Xpos = parseInt(cords[0]);
+            Ypos = parseInt(cords[1]) + parseInt(imgH) + 5;
+            captionWidth = imgW;
+        }
+        captionPostionSet(XposGlass, YposGlass, Xpos, Ypos, captionWidth);
     }
 
+    if (mobile) {
+        if (imgOriatationLandscape || gutterRight < 100) {
+            captionWidth = imgW;
+            Xpos = parseInt(cords[0]) + 3;
+            Ypos = parseInt(cords[1]) + parseInt(imgH) + 5;
+        }
+        else {
+            captionWidth = gutterRight - 20;
+            Xpos = parseInt(cords[0]) + parseInt(imgW) + 20;
+            Ypos = parseInt(cords[1]);
+        }
+        if (gutterRight < 110 && gutterBottom < 35) {
+            Xpos = parseInt(cords[0]) + 3;
+            Ypos = parseInt(cords[1]) + parseInt(imgH) ;
+        }
 
-    /* If gutter les then 200 put under image */
-    if ($(document).width() <= 992) {
 
         $('#glass').css({
             "opacity": "0",
@@ -259,106 +342,48 @@ const captionEffect = (instance, current) => {
 
         $('#captionID').css({
             'position': 'fixed',
-            "bottom": "20px",
-            "left": "0px",
-            "padding-left": "20px",
-            "width": "100vw",
+            "top": Ypos + "px",
+            "left": Xpos + "px",
+            "width": captionWidth + "px",
             "opacity": "1",
             "transition": "all 1s ease-in-out",
             "-moz-transition": "all 1s ease-in-out",
             "-webkit-transition": "all 1s ease-in-out",
         });
-        if ($('.span-long').length) {
+
+        console.log("caption Height", $('#captionID').height(), "gutterBottom", gutterBottom);
+        if ($('#captionID').height() > gutterBottom-3 && gutterRight < 230) {
+            console.log("pre ", Ypos);
+            Ypos = parseInt(cords[1]) + parseInt(imgH) - parseInt($('#captionID').height()) + (parseInt($('#captionID').height()) - parseInt(gutterBottom)) / 2
+            console.log("top ", Ypos);
             $('#captionID').css({
-                "bottom": "4px",
-                "padding-left": "12px",
+                'position': 'fixed',
+                "top": Ypos + "px",
+                "left": Xpos + "px",
+                "width": captionWidth + "px",
+                "opacity": "1",
+                "transition": "all 1s ease-in-out",
+                "-moz-transition": "all 1s ease-in-out",
+                "-webkit-transition": "all 1s ease-in-out",
             });
         }
-        if ($('.compact').length) {
-            $('#captionID').css({
-                "bottom": "3px",
-                "padding-left": "12px",
-            });
-        }
 
-    }
-    else {
-
-
-    }
-
-    if (lanscape && !mobile) {
-        $('#glass').mouseenter(() => {
-            $('#captionID').css({ "opacity": 1 })
-            $('#glass').css({ "opacity": glassOp })
-
-        });
-        $('#minus').mouseenter(() => {
-            $('#captionID').css({ "opacity": 1 })
-            $('#glass').css({ "opacity": glassOp })
-
-        });
-
-        $('.fancybox-content').mouseenter(() => {
-            $('#captionID').css({ "opacity": 1 })
-            $('#glass').css({ "opacity": glassOp })
-        });
-
-        $('.fancybox-content').mouseleave(() => {
-            $('#captionID').css({ "opacity": 0 })
-            $('#glass').css({ "opacity": 0 })
-        });
-
-
-        $('#glass').click(() => {
-            if (instance.isScaledDown()) {
-                instance.scaleToActual();
-                glassOp = 0;
-                $('#glass').css({
-                    "opacity": "0",
-                });
-                $('#minus').css({
-                    "opacity": "1",
-                });
-
-
-            } else {
-                glassOp = 1;
-                instance.scaleToFit();
-                $('#glass').css({
-                    "opacity": "0.8",
-                });
-                $('#minus').css({
-                    "opacity": "0",
-                });
-            }
-        });
-
-        $('#minus').click(() => {
-            if (instance.isScaledDown()) {
-                instance.scaleToActual();
-                glassOp = 0;
-                $('#glass').css({
-                    "opacity": "0",
-                });
-                $('#minus').css({
-                    "opacity": "1",
-                });
-
-
-            } else {
-                instance.scaleToFit();
-                glassOp = 1;
-                $('#glass').css({
-                    "opacity": "0.7",
-                });
-                $('#minus').css({
-                    "opacity": "0",
-                });
-            }
-        });
+        // if ($('.span-long').length) {
+        //     $('#captionID').css({
+        //         "bottom": "4px",
+        //         "padding-left": "12px",
+        //     });
+        // }
+        // if ($('.compact').length) {
+        //     $('#captionID').css({
+        //         "bottom": "3px",
+        //         "padding-left": "12px",
+        //     });
+        // }
     }
 
+
+    captionListeners(glassOp);
 
 }
 
