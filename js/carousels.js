@@ -224,9 +224,9 @@ const captionPostionSet = (XposGlass, YposGlass, Xpos, Ypos, captionWidth) => {
         "z-index": 99999,
         "color": "white",
         "font-size": "50px",
-        "transition": "all 1s ease-in-out",
-        "-moz-transition": "all 1s ease-in-out",
-        "-webkit-transition": "all 1s ease-in-out",
+        "transition": "all 0.5s ease-in-out",
+        "-moz-transition": "all 0.5s ease-in-out",
+        "-webkit-transition": "all 0.5s ease-in-out",
     });
 
     $('#minus').css({
@@ -237,18 +237,18 @@ const captionPostionSet = (XposGlass, YposGlass, Xpos, Ypos, captionWidth) => {
         "color": "white",
         "font-size": "50px",
         "opacity": "0",
-        "transition": "all 1s ease-in-out",
-        "-moz-transition": "all 1s ease-in-out",
-        "-webkit-transition": "all 1s ease-in-out",
+        "transition": "all 0.5s ease-in-out",
+        "-moz-transition": "all 0.5s ease-in-out",
+        "-webkit-transition": "all 0.5s ease-in-out",
     });
     $('#captionID').css({
         'position': 'fixed',
         "top": Ypos + "px",
         "left": Xpos + "px",
         "width": captionWidth + "px",
-        "transition": "all 1s ease-in-out",
-        "-moz-transition": "all 1s ease-in-out",
-        "-webkit-transition": "all 1s ease-in-out",
+        "transition": "all 0.5s ease-in-out",
+        "-moz-transition": "all 0.5s ease-in-out",
+        "-webkit-transition": "all 0.5s ease-in-out",
     });
 }
 
@@ -315,10 +315,10 @@ const captionEffect = (instance, current) => {
     }
 
     if (mobile) {
-        if (imgOriatationLandscape || gutterRight < 100) {
+        if (imgOriatationLandscape || gutterRight < 150) {
             captionWidth = imgW;
             Xpos = parseInt(cords[0]) + 3;
-            Ypos = parseInt(cords[1]) + parseInt(imgH) + 5;
+            Ypos = parseInt(cords[1]) + parseInt(imgH) + 2;
         }
         else {
             captionWidth = gutterRight - 20;
@@ -327,7 +327,7 @@ const captionEffect = (instance, current) => {
         }
         if (gutterRight < 110 && gutterBottom < 35) {
             Xpos = parseInt(cords[0]) + 3;
-            Ypos = parseInt(cords[1]) + parseInt(imgH) ;
+            Ypos = parseInt(cords[1]) + parseInt(imgH);
         }
 
 
@@ -346,25 +346,25 @@ const captionEffect = (instance, current) => {
             "left": Xpos + "px",
             "width": captionWidth + "px",
             "opacity": "1",
-            "transition": "all 1s ease-in-out",
-            "-moz-transition": "all 1s ease-in-out",
-            "-webkit-transition": "all 1s ease-in-out",
+            "transition": "all 0.5s ease-in-out",
+            "-moz-transition": "all 0.5s ease-in-out",
+            "-webkit-transition": "all 0.5s ease-in-out",
         });
 
-        console.log("caption Height", $('#captionID').height(), "gutterBottom", gutterBottom);
-        if ($('#captionID').height() > gutterBottom-3 && gutterRight < 230) {
-            console.log("pre ", Ypos);
-            Ypos = parseInt(cords[1]) + parseInt(imgH) - parseInt($('#captionID').height()) + (parseInt($('#captionID').height()) - parseInt(gutterBottom)) / 2
-            console.log("top ", Ypos);
+        
+        if ($('#captionID').height() > gutterBottom && gutterRight < 150) {
+
+            Ypos = parseInt(cords[1]) + parseInt(imgH) - parseInt($('#captionID').height())
+
             $('#captionID').css({
                 'position': 'fixed',
                 "top": Ypos + "px",
                 "left": Xpos + "px",
                 "width": captionWidth + "px",
                 "opacity": "1",
-                "transition": "all 1s ease-in-out",
-                "-moz-transition": "all 1s ease-in-out",
-                "-webkit-transition": "all 1s ease-in-out",
+                "transition": "all 0.5s ease-in-out",
+                "-moz-transition": "all 0.5s ease-in-out",
+                "-webkit-transition": "all 0.5s ease-in-out",
             });
         }
 
@@ -401,7 +401,7 @@ const fancyStyle1 = {
     transitionEffect: "zoom-in-out",
     transitionDuration: 1000,
     btnTpl: flechas,
-    spinnerTpl: '<div class="preloader-wrapper-gal"><div class="preloader">  <img src="/img/Interwind-1s-327px.svg" alt="preloader"></div></div>',
+    spinnerTpl: '<div class="preloader-wrapper-gal"><div class="preloader">  <img src="/svg/PreloaderCarusel.svg" alt="preloader"></div></div>',
     afterShow: (instance, current) => {
         // console.log('AfterShow', current, instance);
         captionEffect(instance, current)
@@ -423,7 +423,7 @@ const fancyStyle2 = {
     transitionEffect: "zoom-in-out",
     transitionDuration: 1000,
     btnTpl: flechas2,
-    spinnerTpl: '<div class="preloader-wrapper-gal"><div class="preloader">  <img src="/img/Interwind-1s-327px.svg" alt="preloader"></div></div>',
+    spinnerTpl: '<div class="preloader-wrapper-gal"><div class="preloader">  <img src="/svg/PreloaderCarusel.svg" alt="preloader"></div></div>',
     afterShow: (instance, current) => {
         // console.log('AfterShow', current, instance);
         captionEffect(instance, current)

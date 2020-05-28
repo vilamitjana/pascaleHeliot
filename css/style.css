@@ -1067,7 +1067,7 @@ body.preloader-site {
 .preloader-wrapper-gal {
   height: 100%;
   width: 100%;
-  background: #1e1e1e;
+  background: #000000;
   position: fixed;
   top: 0;
   left: 0;
