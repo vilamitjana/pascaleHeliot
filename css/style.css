@@ -1160,3 +1160,7 @@ body.preloader-site {
   text-align: justify;
   text-justify: auto;
 }
+
+.bio-spacing {
+  letter-spacing: 7px;
+}
