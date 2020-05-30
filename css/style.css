@@ -1098,16 +1098,16 @@ body.preloader-site {
 
 .back-to-top {
   bottom: -20px;
-  fill: #000;
-  fill: #000;
-  height: 35px;
+  fill: #FF0000;
+  height: 50px;
+  width: 50px;
   opacity: 0;
   position: relative;
   right: 0;
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
   transition: all 0.2s ease;
-  width: 35px;
+  
 }
 
 .back-to-top-active .back-to-top {
