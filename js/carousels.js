@@ -325,11 +325,11 @@ const captionEffect = (instance, current) => {
             Xpos = parseInt(cords[0]) + parseInt(imgW) + 20;
             Ypos = parseInt(cords[1]);
         }
+
         if (gutterRight < 110 && gutterBottom < 35) {
             Xpos = parseInt(cords[0]) + 3;
             Ypos = parseInt(cords[1]) + parseInt(imgH);
         }
-
 
         $('#glass').css({
             "opacity": "0",
@@ -351,20 +351,19 @@ const captionEffect = (instance, current) => {
             "-webkit-transition": "all 0.5s ease-in-out",
         });
 
-        
+
+        if($('#captionID').height()+10<gutterBottom){
+            Ypos = parseInt(cords[1]) + parseInt(imgH)+30;
+            $('#captionID').css({
+                "top": Ypos + "px"
+            });
+        }
+        // caption ontop of image
         if ($('#captionID').height() > gutterBottom && gutterRight < 150) {
 
             Ypos = parseInt(cords[1]) + parseInt(imgH) - parseInt($('#captionID').height())
-
             $('#captionID').css({
-                'position': 'fixed',
-                "top": Ypos + "px",
-                "left": Xpos + "px",
-                "width": captionWidth + "px",
-                "opacity": "1",
-                "transition": "all 0.5s ease-in-out",
-                "-moz-transition": "all 0.5s ease-in-out",
-                "-webkit-transition": "all 0.5s ease-in-out",
+                "top": Ypos + "px"
             });
         }
 
