@@ -135,7 +135,7 @@ const zoombutton = {
         '</div>',
 }
 
-const captionListeners = (glassOp) => {
+const captionListeners = (glassOp,instance) => {
 
 
     /* if on desktop add mouse events */
@@ -383,7 +383,7 @@ const captionEffect = (instance, current) => {
     }
 
 
-    captionListeners(glassOp);
+    captionListeners(glassOp, instance);
 
 }
 
@@ -416,7 +416,7 @@ const fancyStyle2 = {
     buttons: [
         "close"
     ],
-    loop: false,
+    loop: true,
     baseTpl: zoombutton.baseTpl,
     animationEffect: "zoom-in-out",
     animationDuration: 1000,
