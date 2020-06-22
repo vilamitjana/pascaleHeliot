@@ -215,6 +215,12 @@
   .fancybox-caption__body {
     opacity: 1;
   }
+
+  .bg404 {
+   
+    background-image: url("/img/404mobil.png");
+
+    }
 }
 
 /** Width between 600px to 0
@@ -326,6 +332,12 @@
   .fancybox-caption__body {
     opacity: 1;
   }
+
+  .bg404 {
+   
+    background-image: url("/img/404mobil.png");
+
+    }
 }
 
 /** Width between 480px to 0
@@ -422,6 +434,12 @@
   .fancybox-caption__body {
     opacity: 1;
   }
+
+  .bg404 {
+   
+    background-image: url("/img/404mobil.png");
+
+    }
 }
 
 /** Width between 320px to 0
@@ -527,4 +545,10 @@
   .fancybox-caption__body {
     opacity: 1;
   }
+
+  .bg404 {
+   
+    background-image: url("/img/404mobil.png");
+
+    }
 }

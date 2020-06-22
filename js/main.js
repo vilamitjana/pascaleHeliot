@@ -47,7 +47,7 @@ $(document).ready(function() {
     var typed = $(".typed");
     $(function() {
         typed.typed({
-            strings: ['artist painter'],
+            strings: ['visual artist, painter'],
             typeSpeed: 100,
             loop: true,
         });
@@ -56,7 +56,7 @@ $(document).ready(function() {
     var typedPol = $(".typed-pol");
     $(function() {
         typedPol.typed({
-            strings: ['artysta malarz'],
+            strings: [''],
             typeSpeed: 100,
             loop: true,
         });
